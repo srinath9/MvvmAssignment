@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
+        <variable name="pupil" type="com.hyprful.firstmvvm.api.model.Pupil"/>
+        <variable name="callback" type="com.hyprful.firstmvvm.view.callback.PupilClickCallBack"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="16dp"
+        android:onClick="@{() ->  callback.onClick(pupil)}"
+        >
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:id="@+id/photo"
+            android:src="@mipmap/no_photo"
+            app:profileImage="@{pupil.image}"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/title"
+                android:layout_toLeftOf="@id/photo"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@{pupil.name}"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/country"
+                android:text="@{pupil.country}"
+                android:layout_below="@id/title"
+                android:layout_marginBottom="10dp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

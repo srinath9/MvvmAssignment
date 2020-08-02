@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+
+    <data>
+<!--        <variable name="newPupilFragmentViewModel" type="com.hyprful.firstmvvm.viewmodel.NewPupilFragmentViewModel"/>-->
+        <variable name="data" type="com.hyprful.firstmvvm.view.viewbinding.PupilDataBinding"/>
+        <variable name="fragment" type="com.hyprful.firstmvvm.view.fragment.NewPupilFragment"/>
+<!--        <variable name="viewModel" type="com.hyprful.firstmvvm.viewmodel.NewPupilFragmentViewModel"/>-->
+    </data>
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_name"
+        android:singleLine="true"
+        android:text="@={data.name}"
+        android:hint="NAME"
+        android:imeOptions="actionNext"
+        android:nextFocusDown="@+id/et_country"
+        android:layout_marginBottom="10dp"
+
+        />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_country"
+        android:hint="COUNTRY"
+        android:singleLine="true"
+        android:nextFocusDown="@+id/et_latitude"
+        android:imeOptions="actionNext"
+        android:text="@={data.country}"
+        android:layout_marginBottom="10dp"
+
+        />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_latitude"
+        android:hint="LATITUDE"
+        android:singleLine="true"
+        android:nextFocusDown="@+id/et_longitude"
+        android:imeOptions="actionNext"
+        android:text="@={data.latitude}"
+        android:layout_marginBottom="10dp"
+        android:inputType="numberSigned|numberDecimal"
+
+
+        />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_longitude"
+        android:hint="LONGITUDE"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        android:text="@={data.longitude}"
+        android:inputType="numberSigned|numberDecimal"
+        android:layout_marginBottom="10dp"
+
+        />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_submit"
+        android:text="Submit"
+        android:background="@color/colorAccent"
+        android:textColor="@android:color/white"
+        android:onClick="@{(v) -> fragment.submit()}"
+        />
+
+</LinearLayout>
+
+</layout>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FirstMvvm</string>
+    <string name="add_pupil">Add Pupil</string>
+</resources>
